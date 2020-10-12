@@ -1,5 +1,6 @@
 # Worley-Noise
 Worley Noise implementation using C++ and SDL2.0
+
 Basic algorithm
 
 The basic idea is to take random points in space (2- or 3-dimensional) and then for every location in space take the distances dn to the nth-closest point (e.g. the second-closest point) and use combinations of those to control color information ( note that dn+1 > dn). More precisely:
