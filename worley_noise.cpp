@@ -12,7 +12,6 @@ int main(int argc, char* argv[]) {
 		SDL_bool done = SDL_FALSE;
 		vector<SDL_Point> random_points;
 		for (int i = 0; i < number_of_random_points; i++) {
-			//srand(time(NULL));
 			int x = rand() % WindowWidth;
 			int y = rand() % WindowHeight;
 			SDL_Point p = { x , y };
@@ -29,14 +28,12 @@ int main(int argc, char* argv[]) {
 				}
 			}
 			SDL_RenderPresent(renderer);
-			int cycle = 0;
 			while (!done){
 				SDL_PollEvent(&event);
 				if (event.type == SDL_QUIT) {
 					done = SDL_TRUE;
 				}
 				
-				//cout << cycle++ << endl;
 				
 			}
 		}
