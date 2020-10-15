@@ -13,7 +13,7 @@ const int WindowWidth = 800;
 const int number_of_random_points = 64;
 
 float distance(int x1, int y1, int x2, int y2) {
-	return sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+	return (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
 }
 float min(vector<float> &v) {
 	float min = v[0];
@@ -37,13 +37,13 @@ int worley_noise(vector<SDL_Point>& v, int x, int y, int n) {
 		dists.push_back(distance(p.x, p.y, x, y));
 	}
 	if (n == 1) {
-		return (int)min(dists);
+		return (int)sqrt(min(dists));
 	}
 	else if (n == v.size() + 1) {
-		return (int)max(dists);
+		return (int)sqrt(max(dists));
 	}
 	else {
 		sort(dists.begin(), dists.end());
-		return (int)dists[n - 1];
+		return (int)sqrt(dists[n - 1]);
 	}
 }

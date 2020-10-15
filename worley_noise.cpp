@@ -1,8 +1,6 @@
-
 /*https://en.wikipedia.org/wiki/Worley_noise
   Serkan Can Caglayan 10/9/2020
 */
-
 #include "funcs.h"
 int main(int argc, char* argv[]) {
 	if (!SDL_Init(SDL_INIT_VIDEO)){
@@ -17,8 +15,6 @@ int main(int argc, char* argv[]) {
 			SDL_Point p = { x , y };
 			random_points.push_back(p);
 		}
-		
-		
 		if (!SDL_CreateWindowAndRenderer(WindowWidth, WindowHeight, 0, &window, &renderer)){
 			for (int i = 0; i < WindowWidth; i++) {
 				for (int j = 0; j < WindowHeight; j++) {
@@ -33,15 +29,12 @@ int main(int argc, char* argv[]) {
 				if (event.type == SDL_QUIT) {
 					done = SDL_TRUE;
 				}
-				
-				
 			}
 		}
 		else{
 			std::cerr << "Failed to create window or renderer" << std::endl;
 			exit(EXIT_FAILURE);
 		}
-
 		SDL_DestroyWindow(window);
 		SDL_DestroyRenderer(renderer);
 		SDL_Quit();
